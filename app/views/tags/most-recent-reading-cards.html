@@ -1,0 +1,58 @@
+<div class="ui five stackable inverted cards">
+  <div class="card">
+    <div class="content">
+      <div class="header">
+        ${_station.name}
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <div class="header">
+        Weather
+      </div>
+      <div class="meta">
+        ${_weatherCondition}
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <div class="header">
+        Temp
+      </div>
+      <div class="meta">
+        ${_latestReading.temperature} C
+      </div>
+      <div class="meta">
+        ${_tempInFahrenheit} F
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <div class="header">
+        Wind
+      </div>
+      <div class="meta">
+        Beaufort Force ${_beaufortForce}
+      </div>
+      <div class="meta">
+        Direction: ${_cardinalWindDirection}
+      </div>
+      <div class="meta">
+        Feels Like ${_windChill} C
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="content">
+      <div class="header">
+        Pressure
+      </div>
+      <div class="meta">
+        ${_latestReading.pressure} hPa
+      </div>
+    </div>
+  </div>
+</div>

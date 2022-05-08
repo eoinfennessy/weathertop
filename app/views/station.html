@@ -1,0 +1,14 @@
+#{extends 'main.html' /}
+#{set title:station.name + ' Weather Station' /}
+
+#{menu id:'dashboard', heading:station.name + ' Weather Station' /}
+<section class="ui raised segment">
+  #{most-recent-reading-cards station:station, latestReading:latestReading, weatherCondition:weatherCondition,
+                              tempInFahrenheit:tempInFahrenheit, beaufortForce:beaufortForce,
+                              cardinalWindDirection:cardinalWindDirection, windChill:windChill /}
+
+  #{readings-table station:station /}
+
+  #{add-reading station:station /}
+</section>
+

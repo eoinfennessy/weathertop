@@ -1,0 +1,25 @@
+#{extends 'main.html' /}
+#{set title:'Dashboard' /}
+
+#{menu id:'dashboard', heading:'Weather Top Stations' /}
+
+<section class="ui raised segment">
+  #{list items:stations, as:'station'}
+    <section class="ui raised segment">
+      <h2 class="ui header">
+        ${station.name}
+      </h2>
+      <a href="stations/${station.id}" class="ui icon button">
+        <i class="icon folder open"></i>
+      </a>
+    </section>
+  #{/list}
+</section>
+
+<form class="ui stacked segment form" action="/dashboard/add-station" method="post">
+  <div class="field">
+    <label>Name</label>
+    <input placeholder="Name" type="text" name="name">
+  </div>
+  <button class="ui blue submit button">Add Station</button>
+</form>
