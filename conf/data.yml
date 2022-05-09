@@ -28,12 +28,25 @@ Reading(r4):
 
 Station(s1):
   name: Tramore
+  latitude: 52.1623500
+  longitude: -7.1524400
   readings:
     - r1
     - r2
 
-Station(s2):
-  name: Dunmore
-  readings:
-    - r3
-    - r4
+  Station(s2):
+    name: Dunmore
+    latitude: 52.1499994
+    longitude: -6.9833294
+    readings:
+      - r3
+      - r4
+
+  Member(m1):
+  email: homer@simpson.com
+  password: secret
+  firstname: Homer
+  lastname: Simpson
+  stations:
+    - s1
+    - s2
