@@ -1,0 +1,22 @@
+#{extends 'main.html' /}
+#{set title:'Login' /}
+#{welcome-menu id:'login', heading:'Please login to WeatherTop' /}
+
+<div class="ui two column grid basic middle aligned segment">
+  <div class="column">
+    <form class="ui stacked segment form" action="/authenticate" method="post">
+      <div class="field">
+        <label>Email</label>
+        <input placeholder="Email" type="email" name="email">
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <input type="password" name="password">
+      </div>
+      <button class="ui blue submit button">Login</button>
+    </form>
+  </div>
+  <div class="column">
+    <img class="ui image" src="/public/images/todo-2.jpg">
+  </div>
+</div>
