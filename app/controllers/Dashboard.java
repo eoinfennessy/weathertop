@@ -15,10 +15,10 @@ public class Dashboard extends Controller {
         render ("dashboard.html", stations);
     }
 
-    public static void addStation(String name) {
+    public static void addStation(String name, float latitude, float longitude) {
         Logger.info("Adding station: " + name);
         Member member = Accounts.getLoggedInMember();
-        Station station = new Station(name);
+        Station station = new Station(name, latitude, longitude);
         member.stations.add(station);
         member.save();
         redirect("/dashboard");
