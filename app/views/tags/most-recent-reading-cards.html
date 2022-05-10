@@ -2,15 +2,11 @@
   <div class="card">
     <div class="content">
       <i class="right floated huge violet map marker alternate icon"></i>
-
-      <div class="header">	&nbsp; </div>
-
+      <div class="header">&nbsp;</div>
       <div class="header">
         ${_station.name}
       </div>
-
-      <div class="header">	&nbsp; </div>
-
+      <div class="header">&nbsp;</div>
       <div class="meta">
         Lat: ${_station.latitude}°
       </div>
@@ -22,9 +18,11 @@
   <div class="card">
     <div class="content">
       <i class="right floated huge red ${_station.latestReading?.weatherIcon} icon"></i>
+      <div class="header">&nbsp;</div>
       <div class="header">
         Weather
       </div>
+      <div class="header">&nbsp;</div>
       <div class="meta">
         ${_station.latestReading?.weatherCondition}
       </div>
@@ -33,9 +31,11 @@
   <div class="card">
     <div class="content">
       <i class="right floated huge blue temperature low icon"></i>
+      <div class="header">&nbsp;</div>
       <div class="header">
         Temp
       </div>
+      <div class="header">&nbsp;</div>
       <div class="meta">
         ${_station.latestReading?.temperature} °C
       </div>
@@ -53,9 +53,11 @@
   <div class="card">
     <div class="content">
       <i class="right floated huge green wind icon"></i>
+      <div class="header">&nbsp;</div>
       <div class="header">
         Wind
       </div>
+      <div class="header">&nbsp;</div>
       <div class="meta">
         Beaufort Force ${_station.latestReading?.beaufortForce}
       </div>
@@ -76,9 +78,11 @@
   <div class="card">
     <div class="content">
       <i class="right floated huge orange compress arrows alternate icon"></i>
+      <div class="header">&nbsp;</div>
       <div class="header">
         Pressure
       </div>
+      <div class="header">&nbsp;</div>
       <div class="meta">
         ${_station.latestReading?.pressure} hPa
       </div>
