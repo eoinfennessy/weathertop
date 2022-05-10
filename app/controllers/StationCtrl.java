@@ -19,6 +19,7 @@ public class StationCtrl extends Controller {
         int beaufortForce = 0;
         String cardinalWindDirection = null;
         float windChill = 0;
+        String weatherIcon = null;
         if (!station.readings.isEmpty()) {
             latestReading = station.readings.get(station.readings.size() -1);
             weatherCondition = convertWeatherCodeToWeatherCondition(latestReading.code);
@@ -26,9 +27,10 @@ public class StationCtrl extends Controller {
             beaufortForce = convertKilometresPerHourToBeaufortForce(latestReading.windSpeed);
             cardinalWindDirection = convertDegreesToCardinalDirection(latestReading.windDirection);
             windChill = calculateWindChill(latestReading.temperature, latestReading.windSpeed);
+            weatherIcon = weatherIcons.get(latestReading.code);
         }
         render("station.html", station, latestReading, weatherCondition, tempInFahrenheit,
-                beaufortForce, cardinalWindDirection, windChill);
+                beaufortForce, cardinalWindDirection, windChill, weatherIcon);
     }
 
     public void addReading(long id, int code, float temperature, float windSpeed, float windDirection, float pressure) {

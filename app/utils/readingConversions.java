@@ -1,6 +1,26 @@
 package utils;
 
+import com.sun.xml.bind.v2.TODO;
+
+import java.util.HashMap;
+
 public class readingConversions {
+    // TODO: Change to private and write getter that takes weather code
+    public static final HashMap<Integer, String> weatherIcons = populateWeatherIcons();
+
+    private static HashMap<Integer, String> populateWeatherIcons() {
+        HashMap<Integer, String> weatherIcons = new HashMap<>();
+        weatherIcons.put(100, "sun");
+        weatherIcons.put(200, "cloud sun");
+        weatherIcons.put(300, "cloud");
+        weatherIcons.put(400, "cloud rain");
+        weatherIcons.put(500, "cloud showers heavy");
+        weatherIcons.put(600, "umbrella");
+        weatherIcons.put(700, "snowflake");
+        weatherIcons.put(800, "bolt");
+        return weatherIcons;
+    }
+
     public static String convertWeatherCodeToWeatherCondition(int weatherCode) {
         switch (weatherCode) {
             case 100: return "Clear";
@@ -89,7 +109,6 @@ public class readingConversions {
             return "NNW";
         }
     }
-
 
     public static float calculateWindChill(float t, float v) {
         return (float) (13.12 + 0.6215 * t - 11.37 * Math.pow(v, 0.16) + 0.3965 * t * Math.pow(v, 0.16));
