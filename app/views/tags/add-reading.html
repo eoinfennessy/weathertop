@@ -2,24 +2,24 @@
   <form class="ui form" action="/stations/${_station.id}/add-reading" method="post">
     <div class="ui five fields">
       <div class="field">
-        <label>Code</label>
-        <input placeholder="Code" type="number" step="100" min="100" max="800" name="code">
+        <label>Weather Code</label>
+        <input placeholder="100 - 800" type="number" step="100" min="100" max="800" name="code">
       </div>
       <div class="field">
         <label>Temperature</label>
-        <input placeholder="Temperature" type="number" step="any" name="temperature">
+        <input placeholder="°C" type="number" step="any" name="temperature">
       </div>
       <div class="field">
         <label>Wind Speed</label>
-        <input placeholder="Wind Speed" type="number" step="any" min="0" name="windSpeed">
+        <input placeholder="km/h" type="number" step="any" min="0" name="windSpeed">
       </div>
       <div class="field">
         <label>Wind Direction</label>
-        <input placeholder="Wind Direction" type="number" step="any" min="0" max="360" name="windDirection">
+        <input placeholder="Degrees" type="number" step="any" min="0" max="360" name="windDirection">
       </div>
       <div class="field">
         <label>Pressure</label>
-        <input placeholder="Pressure" type="number" step="any" name="pressure">
+        <input placeholder="hPa" type="number" step="any" name="pressure">
       </div>
     </div>
     <button class="ui submit blue button">Add Reading</button>

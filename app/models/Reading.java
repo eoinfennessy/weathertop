@@ -19,4 +19,12 @@ public class Reading extends Model {
         this.windDirection = windDirection;
         this.pressure = pressure;
     }
+
+    public Reading(Reading reading) {
+        this.code = reading.code;
+        this.temperature = reading.temperature;
+        this.windSpeed = reading.windSpeed;
+        this.windDirection = reading.windDirection;
+        this.pressure = reading.pressure;
+    }
 }
