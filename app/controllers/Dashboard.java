@@ -12,6 +12,17 @@ public class Dashboard extends Controller {
         Logger.info("Rendering dashboard");
         Member member = Accounts.getLoggedInMember();
         List<Station> stations = member.stations;
+        // TODO: Sort stations by station name
+        for (Station station : stations) {
+            station.calculateLatestReading();
+            station.calculateMaxTemperature();
+            station.calculateMinTemperature();
+            station.calculateMaxWindSpeed();
+            station.calculateMinWindSpeed();
+            station.calculateMaxPressure();
+            station.calculateMinPressure();
+            station.calculateTrends();
+        }
         render ("dashboard.html", stations);
     }
 
