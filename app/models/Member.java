@@ -6,6 +6,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Entity
@@ -31,5 +32,9 @@ public class Member extends Model {
 
     public boolean isCorrectPassword(String password) {
         return this.password.equals(password);
+    }
+
+    public void sortStationsByName() {
+        stations.sort(Comparator.comparing(station -> station.name));
     }
 }

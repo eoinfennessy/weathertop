@@ -11,8 +11,8 @@ public class Dashboard extends Controller {
     public static void index() {
         Logger.info("Rendering dashboard");
         Member member = Accounts.getLoggedInMember();
+        member.sortStationsByName();
         List<Station> stations = member.stations;
-        // TODO: Sort stations by station name
         for (Station station : stations) {
             station.calculateLatestReading();
             station.calculateMaxTemperature();
