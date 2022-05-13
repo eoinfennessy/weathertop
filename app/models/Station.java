@@ -32,6 +32,12 @@ public class Station extends Model {
     public float maxPressure;
     @Transient
     public float minPressure;
+    @Transient
+    public String temperatureTrend;
+    @Transient
+    public String windSpeedTrend;
+    @Transient
+    public String pressureTrend;
 
     public Station(String name, float latitude, float longitude) {
         this.name = name;
@@ -115,6 +121,67 @@ public class Station extends Model {
                 }
             }
             minPressure = currentMinPressure;
+        }
+    }
+
+//    public void calculateTemperatureTrend() {
+//        if (readings.size() >= 3) {
+//            int rs = readings.size();
+//            if (readings.get(rs - 1).temperature > readings.get(rs - 2).temperature
+//                    && readings.get(rs - 2).temperature > readings.get(rs - 3).temperature) {
+//                temperatureTrend = "up arrow";
+//            } else if (readings.get(rs - 1).temperature < readings.get(rs - 2).temperature
+//                    && readings.get(rs - 2).temperature < readings.get(rs - 3).temperature) {
+//                temperatureTrend = "down arrow";
+//            } else {
+//                temperatureTrend = "";
+//            }
+//        }
+//    }
+
+//    public void calculateWindSpeedTrend() {
+//        if (readings.size() >= 3) {
+//            int rs = readings.size();
+//            if (readings.get(rs - 1).windSpeed > readings.get(rs - 2).windSpeed
+//                    && readings.get(rs - 2).windSpeed > readings.get(rs - 3).windSpeed) {
+//                windSpeedTrend = "up arrow";
+//            } else if (readings.get(rs - 1).windSpeed < readings.get(rs - 2).windSpeed
+//                    && readings.get(rs - 2).windSpeed < readings.get(rs - 3).windSpeed) {
+//                windSpeedTrend = "down arrow";
+//            } else {
+//                windSpeedTrend = "";
+//            }
+//        }
+//    }
+
+    public void calculateTrends() {
+        if (readings.size() >= 3) {
+            int len = readings.size();
+            temperatureTrend = getTrendIcon(readings.get(len - 3).temperature,
+                                            readings.get(len - 2).temperature,
+                                            readings.get(len - 1).temperature);
+            windSpeedTrend = getTrendIcon(readings.get(len - 3).windSpeed,
+                                          readings.get(len - 2).windSpeed,
+                                          readings.get(len - 1).windSpeed);
+            pressureTrend = getTrendIcon(readings.get(len - 3).pressure,
+                                         readings.get(len - 2).pressure,
+                                         readings.get(len - 1).pressure);
+        } else {
+            temperatureTrend = "";
+            windSpeedTrend = "";
+            pressureTrend = "";
+        }
+    }
+
+    public String getTrendIcon(float val1, float val2, float val3) {
+        // If trend is upwards
+        if (val1 < val2 && val2 < val3) {
+            return "up arrow";
+        // if trend is downwards
+        } else if (val1 > val2 && val2 > val3) {
+            return "down arrow";
+        } else {
+            return "";
         }
     }
 }

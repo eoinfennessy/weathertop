@@ -16,6 +16,7 @@ public class StationCtrl extends Controller {
         station.calculateMinWindSpeed();
         station.calculateMaxPressure();
         station.calculateMinPressure();
+        station.calculateTrends();
         render("station.html", station);
     }
 

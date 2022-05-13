@@ -39,6 +39,7 @@
       <div class="meta">
         ${_station.latestReading?.temperature} °C
       </div>
+      <i class="right floated big blue ${_station.temperatureTrend} icon"></i>
       <div class="meta">
         ${_station.latestReading?.tempInFahrenheit} °F
       </div>
@@ -61,6 +62,7 @@
       <div class="meta">
         Beaufort Force ${_station.latestReading?.beaufortForce}
       </div>
+      <i class="right floated big green ${_station.windSpeedTrend} icon"></i>
       <div class="meta">
         Direction: ${_station.latestReading?.cardinalWindDirection}
       </div>
@@ -86,6 +88,7 @@
       <div class="meta">
         ${_station.latestReading?.pressure} hPa
       </div>
+      <i class="right floated big orange ${_station.pressureTrend} icon"></i>
       <div class="meta">
         Max: ${_station.maxPressure} hPa
       </div>
