@@ -1,6 +1,7 @@
 package controllers;
 
 import models.Member;
+import models.Reading;
 import models.Station;
 import play.Logger;
 import play.mvc.Controller;
@@ -32,6 +33,16 @@ public class Dashboard extends Controller {
         Station station = new Station(name, latitude, longitude);
         member.stations.add(station);
         member.save();
+        redirect("/dashboard");
+    }
+
+    public void deleteStation(long id) {
+        Station station = Station.findById(id);
+        Logger.info("Deleting station: " + station.name);
+        Member member = Accounts.getLoggedInMember();
+        member.stations.remove(station);
+        member.save();
+        station.delete();
         redirect("/dashboard");
     }
 }

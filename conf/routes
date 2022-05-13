@@ -11,6 +11,7 @@ POST    /authenticate                                       Accounts.authenticat
 GET     /logout                                             Accounts.logout
 GET     /dashboard                                          Dashboard.index
 POST    /dashboard/add-station                              Dashboard.addStation
+GET     /dashboard/delete-station/{id}                      Dashboard.deleteStation
 GET     /about                                              About.index
 GET     /stations/{id}                                      StationCtrl.index
 POST    /stations/{id}/add-reading                          StationCtrl.addReading
