@@ -35,6 +35,6 @@ public class Member extends Model {
     }
 
     public void sortStationsByName() {
-        stations.sort(Comparator.comparing(station -> station.name));
+        stations.sort((station1, station2) -> station1.name.compareToIgnoreCase(station2.name));
     }
 }
