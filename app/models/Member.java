@@ -14,7 +14,7 @@ public class Member extends Model {
     public String firstName;
     public String lastName;
     public String email;
-    public String password;
+    private String password;
 
     @OneToMany(cascade = CascadeType.ALL)
     public List<Station> stations = new ArrayList<>();
@@ -36,5 +36,9 @@ public class Member extends Model {
 
     public void sortStationsByName() {
         stations.sort((station1, station2) -> station1.name.compareToIgnoreCase(station2.name));
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

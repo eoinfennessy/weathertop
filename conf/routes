@@ -6,8 +6,13 @@
 GET     /                                                   Start.index
 GET     /signup                                             Accounts.signup
 GET     /login                                              Accounts.login
+GET     /account-settings                                   Accounts.settings
 POST    /register                                           Accounts.register
 POST    /authenticate                                       Accounts.authenticate
+POST    /account-settings/update-name                       Accounts.updateName
+POST    /account-settings/update-email                      Accounts.updateEmail
+POST    /account-settings/update-password                   Accounts.updatePassword
+POST    /account-settings/delete-account                    Accounts.deleteAccount
 GET     /logout                                             Accounts.logout
 GET     /dashboard                                          Dashboard.index
 POST    /dashboard/add-station                              Dashboard.addStation

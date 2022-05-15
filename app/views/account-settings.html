@@ -1,0 +1,73 @@
+#{extends 'main.html' /}
+#{set title:'Account Settings' /}
+
+#{menu id:'dashboard', heading:'Account Settings' /}
+
+<section class="ui raised segment">
+  #{if message != null}
+    <div class="ui ${messageType} message">
+      <div class="header">
+        <i class="info icon"></i>
+        ${message}
+      </div>
+    </div>
+  #{/if}
+  <h2 class="ui header">Update Account Details</h2>
+  <div class="ui segment">
+    <form class="ui form" action="/account-settings/update-name" method="post">
+      <h4 class="ui dividing header">Change Name</h4>
+      <div class="two fields">
+        <div class="ui field">
+          <label>New First Name</label>
+          <input placeholder="New First Name" type="text" name="firstName">
+        </div>
+        <div class="ui field">
+          <label>New Last Name</label>
+          <input placeholder="New Last Name" type="text" name="lastName">
+        </div>
+      </div>
+      <button class="ui blue submit button">Update</button>
+    </form>
+  </div>
+  <div class="ui segment">
+    <form class="ui form" action="/account-settings/update-email" method="post">
+      <h4 class="ui dividing header">Change Email</h4>
+      <div class="ui field">
+        <label>New Email</label>
+        <input placeholder="New Email" type="email" name="email">
+      </div>
+      <button class="ui blue submit button">Update</button>
+    </form>
+  </div>
+  <div class="ui segment">
+    <form class="ui form" action="/account-settings/update-password" method="post">
+      <h4 class="ui dividing header">Change Password</h4>
+      <div class="two fields">
+        <div class="ui field">
+          <label>New Password</label>
+          <input placeholder="New Password" type="password" name="password">
+        </div>
+        <div class="ui field">
+          <label>Confirm New Password</label>
+          <input placeholder="Confirm New Password" type="password" name="confirmPassword">
+        </div>
+      </div>
+      <div class="ui field">
+        <label>Current Password</label>
+        <input placeholder="Current Password" type="password" name="oldPassword">
+      </div>
+      <button class="ui blue submit button">Update</button>
+    </form>
+  </div>
+  <div class="ui divider"></div>
+  <div class="ui segment">
+    <form class="ui form" action="/account-settings/delete-account" method="post">
+      <h4 class="ui dividing header">Delete Account</h4>
+      <div class="ui field">
+        <label>Password</label>
+        <input placeholder="Password" type="password" name="password">
+      </div>
+      <button class="ui red submit button">Delete Account</button>
+    </form>
+  </div>
+</section>

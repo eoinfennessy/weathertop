@@ -28,21 +28,33 @@ public class Dashboard extends Controller {
     }
 
     public static void addStation(String name, float latitude, float longitude) {
-        Logger.info("Adding station: " + name);
         Member member = Accounts.getLoggedInMember();
-        Station station = new Station(name, latitude, longitude);
-        member.stations.add(station);
-        member.save();
-        redirect("/dashboard");
+        if (member == null) {
+            redirect("/login");
+        } else {
+            Logger.info("Adding station: " + name);
+            Station station = new Station(name, latitude, longitude);
+            member.stations.add(station);
+            member.save();
+            redirect("/dashboard");
+        }
     }
 
     public void deleteStation(long id) {
-        Station station = Station.findById(id);
-        Logger.info("Deleting station: " + station.name);
         Member member = Accounts.getLoggedInMember();
-        member.stations.remove(station);
-        member.save();
-        station.delete();
-        redirect("/dashboard");
+        if (member == null) {
+            redirect("login");
+        } else {
+            Station station = Station.findById(id);
+            if (member.stations.contains(station)) {
+                Logger.info("Deleting station: " + station.name);
+                member.stations.remove(station);
+                member.save();
+                station.delete();
+            } else {
+                Logger.info("Logged in user does not have permission to delete this station");
+            }
+            redirect("/dashboard");
+        }
     }
 }
