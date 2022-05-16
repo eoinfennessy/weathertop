@@ -1,13 +1,39 @@
 #{extends 'main.html' /}
-#{set title:'About' /}
+#{set title:'WeatherTop' /}
 
 #{welcome-menu id:"start"/}
 
-<section class="ui center aligned middle aligned segment">
-  <h1 class="ui header">
-    Welcome to Template 1
+<div class="ui center aligned inverted segment" style="padding: 10em 5em;">
+  <h1 class="ui header" style="font-size: 4em; font-weight: lighter;">
+    Welcome to WeatherTop
   </h1>
-  <p>
-    To be replaced with content...
-  </p>
+  <h3 class="ui header">
+    A place for all your weather station needs
+  </h3>
+  <div style="padding-top: 2em;">
+    <a href="/about" class="ui huge blue inverted button">Learn More</a>
+  </div>
+</div>
+
+<section class="ui center aligned segment">
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="eight wide column" style="padding: 2em">
+        <h2 class="ui header">Keep Track of Your Weather Stations</h2>
+        <p style="font-size: 1.2em">With a WeatherTop account, you can keep track of all of your existing weather
+          stations and their readings, as well as adding and deleting new stations and readings.</p>
+        <h2 class="ui header">Receive Detailed Analytics and Insights</h2>
+        <p style="font-size: 1.2em">View in-depth data on the latest reading from each station as well as insightful
+          analytics and trends on your stations and account.</p>
+      </div>
+      <div class="eight wide right floated column" style="padding: 2em">
+        <img src="public/images/weather-station.jpeg" class="ui large bordered rounded image">
+      </div>
+    </div>
+    <div class="row">
+      <div class="center aligned column">
+        <a href="/signup" class="ui huge blue button">Sign Up Now</a>
+      </div>
+    </div>
+  </div>
 </section>
