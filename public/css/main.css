@@ -1,0 +1,29 @@
+#masthead {
+    padding: 10em 5em;
+}
+
+#masthead h1 {
+    font-size: 4em;
+    font-weight: lighter;
+}
+
+#masthead a {
+    margin-top: 2em;
+}
+
+#start-main .grid-cell {
+    padding: 2em;
+}
+
+#start-main p {
+    font-size: 1.2em;
+}
+
+#about-main h1 {
+    font-size: 3em;
+    margin: 1.5em;
+}
+
+#about-main p {
+    font-size: 1.1em;
+}

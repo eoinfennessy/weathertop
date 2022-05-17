@@ -1,10 +1,57 @@
 #{extends 'main.html' /}
 #{set title:'About' /}
 
-#{menu id:"about"/}
+#{welcome-menu id:'about' /}
 
-<section class="ui center aligned middle aligned segment">
-  <p>
-    About this app
-  </p>
+<section class="ui center aligned middle aligned segment" id="about-main">
+  <h1 class="ui header">About WeatherTop</h1>
+  <div class="ui middle aligned grid container">
+    <div class="row">
+      <div class="eight wide column">
+        <h2>Who Are We?</h2>
+        <p>
+          WeatherTop Inc. was founded in 1998 in Waterford, Ireland. The company started off as a small family-run
+          business, but quickly grew a reputation for building some of the best weather stations the world has ever
+          seen. Since the corporate takeover of the company by Heavy Weather Inc. in 2008, the company has
+          gone from strength to strength and is now the biggest weather station company in all of Waterford.
+        </p>
+      </div>
+      <div class="eight wide column">
+        <figure>
+          <img class="ui rounded image" src="public/images/team.jpeg">
+          <figcaption>Our Team: A Great Bunch of Lads</figcaption>
+        </figure>
+      </div>
+      <div class="eight wide column">
+        <figure>
+          <img class="ui image" src="public/images/weathertop-1000.jpeg">
+          <figcaption>The WeatherTop-1000</figcaption>
+        </figure>
+      </div>
+      <div class="eight wide column">
+        <h2>What Do We Do?</h2>
+        <p>
+          WeatherTop Inc. produce a modular weather station called the WeatherTop 1000. This low-cost device takes a set
+          of meteorological readings and displays these on a simple LCD display. WeatherTop Inc. have just launched a
+          Web companion application for the WeatherTop 1000, and are sure this new feature is going to revolutionise
+          the way weather enthusiasts keep track of their data.
+        </p>
+      </div>
+      <div class="eight wide column">
+        <h2>How Can We Help?</h2>
+        <p>
+          WeatherTop Inc. is passionate about and dedicated to providing outstanding customer experiences, time after
+          time, after time, after time, etc. All our customers say we are amazing, and we'd love to give you, our
+          future loyal customer, that same amazing experience that we are renowned for. You won't regret it: We really
+          are the best thing that has ever happened to the world of weather.
+        </p>
+      </div>
+      <div class="eight wide column">
+        <figure>
+          <img class="ui rounded image" src="public/images/call-center-team.jpeg">
+          <figcaption>Talk To our Sales Team Today</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
 </section>
