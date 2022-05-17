@@ -39,15 +39,15 @@
       <div class="meta">
         ${_station.latestReading?.temperature} °C
       </div>
-      <i class="right floated big blue ${_station.temperatureTrend} icon"></i>
+      <i class="right floated big blue ${_station.stationAnalytics?.temperatureTrendIcon} icon"></i>
       <div class="meta">
         ${_station.latestReading?.tempInFahrenheit} °F
       </div>
       <div class="meta">
-        Max: ${_station.maxTemperature} °C
+        Max: ${_station.stationAnalytics?.maxTemperature} °C
       </div>
       <div class="meta">
-        Min: ${_station.minTemperature} °C
+        Min: ${_station.stationAnalytics?.minTemperature} °C
       </div>
     </div>
   </div>
@@ -62,7 +62,7 @@
       <div class="meta">
         Beaufort Force ${_station.latestReading?.beaufortForce}
       </div>
-      <i class="right floated big green ${_station.windSpeedTrend} icon"></i>
+      <i class="right floated big green ${_station.stationAnalytics?.windSpeedTrendIcon} icon"></i>
       <div class="meta">
         Direction: ${_station.latestReading?.cardinalWindDirection}
       </div>
@@ -70,10 +70,10 @@
         Feels Like ${_station.latestReading?.windChill} °C
       </div>
       <div class="meta">
-        Max: ${_station.maxWindSpeed} km/h
+        Max: ${_station.stationAnalytics?.maxWindSpeed} km/h
       </div>
       <div class="meta">
-        Min: ${_station.minWindSpeed} km/h
+        Min: ${_station.stationAnalytics?.minWindSpeed} km/h
       </div>
     </div>
   </div>
@@ -88,12 +88,12 @@
       <div class="meta">
         ${_station.latestReading?.pressure} hPa
       </div>
-      <i class="right floated big orange ${_station.pressureTrend} icon"></i>
+      <i class="right floated big orange ${_station.stationAnalytics?.pressureTrendIcon} icon"></i>
       <div class="meta">
-        Max: ${_station.maxPressure} hPa
+        Max: ${_station.stationAnalytics?.maxPressure} hPa
       </div>
       <div class="meta">
-        Min: ${_station.minPressure} hPa
+        Min: ${_station.stationAnalytics?.minPressure} hPa
       </div>
     </div>
   </div>

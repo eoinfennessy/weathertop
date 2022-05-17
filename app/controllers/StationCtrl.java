@@ -9,14 +9,8 @@ public class StationCtrl extends Controller {
     public void index(long id) {
         Station station = Station.findById(id);
         Logger.info("Rendering station: " + station.name);
-        station.calculateLatestReading();
-        station.calculateMaxTemperature();
-        station.calculateMinTemperature();
-        station.calculateMaxWindSpeed();
-        station.calculateMinWindSpeed();
-        station.calculateMaxPressure();
-        station.calculateMinPressure();
-        station.calculateTrends();
+        station.updateLatestReading();
+        station.updateStationAnalytics();
         render("station.html", station);
     }
 

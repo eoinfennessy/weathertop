@@ -11,7 +11,6 @@ public class DetailedReading extends Reading {
     float windChill;
     String weatherIcon;
 
-
     public DetailedReading(Reading reading) {
         super(reading);
         weatherCondition = convertWeatherCodeToWeatherCondition(code);

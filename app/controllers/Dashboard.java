@@ -15,14 +15,8 @@ public class Dashboard extends Controller {
         member.sortStationsByName();
         List<Station> stations = member.stations;
         for (Station station : stations) {
-            station.calculateLatestReading();
-            station.calculateMaxTemperature();
-            station.calculateMinTemperature();
-            station.calculateMaxWindSpeed();
-            station.calculateMinWindSpeed();
-            station.calculateMaxPressure();
-            station.calculateMinPressure();
-            station.calculateTrends();
+            station.updateLatestReading();
+            station.updateStationAnalytics();
         }
         render ("dashboard.html", stations);
     }
