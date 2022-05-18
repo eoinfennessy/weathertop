@@ -33,7 +33,8 @@ public class Accounts extends Controller {
         Logger.info("Registering new member: " + email);
         Member member = new Member(firstName, lastName, email, password);
         member.save();
-        redirect("/");
+        session.put("logged_in_member_id", member.id);
+        redirect("/dashboard");
     }
 
     public static void authenticate(String email, String password) {
