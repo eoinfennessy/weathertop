@@ -37,7 +37,7 @@ public class Dashboard extends Controller {
     public void deleteStation(long id) {
         Member member = Accounts.getLoggedInMember();
         if (member == null) {
-            redirect("login");
+            redirect("/login");
         } else {
             Station station = Station.findById(id);
             if (member.stations.contains(station)) {
