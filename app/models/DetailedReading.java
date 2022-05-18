@@ -1,6 +1,5 @@
 package models;
 
-import java.util.HashMap;
 import java.util.TreeMap;
 
 public class DetailedReading extends Reading {
@@ -12,10 +11,11 @@ public class DetailedReading extends Reading {
     public String weatherIcon;
 
     private static final TreeMap<Integer, String> WEATHER_ICONS = populateWeatherIcons();
+    private static final TreeMap<Integer, String> WEATHER_CONDITIONS = populateWeatherConditions();
 
     public DetailedReading(Reading reading) {
         super(reading);
-        weatherCondition = convertWeatherCodeToWeatherCondition(code);
+        weatherCondition = returnWeatherCondition(code);
         tempInFahrenheit = convertCelsiusToFahrenheit(temperature);
         beaufortForce = convertKilometresPerHourToBeaufortForce(windSpeed);
         cardinalWindDirection = convertDegreesToCardinalDirection(windDirection);
@@ -23,36 +23,27 @@ public class DetailedReading extends Reading {
         weatherIcon = returnWeatherIcon(code);
     }
 
-    private static TreeMap<Integer, String> populateWeatherIcons() {
-        TreeMap<Integer, String> weatherIcons = new TreeMap<>();
-        weatherIcons.put(100, "sun");
-        weatherIcons.put(200, "cloud sun");
-        weatherIcons.put(300, "cloud");
-        weatherIcons.put(400, "cloud rain");
-        weatherIcons.put(500, "cloud showers heavy");
-        weatherIcons.put(600, "umbrella");
-        weatherIcons.put(700, "snowflake");
-        weatherIcons.put(800, "bolt");
-        return weatherIcons;
-    }
-
     public static String returnWeatherIcon(int code) {
         return WEATHER_ICONS.get(code);
     }
 
-    public static String convertWeatherCodeToWeatherCondition(int weatherCode) {
-        switch (weatherCode) {
-            case 100: return "Clear";
-            case 200: return "Partial Clouds";
-            case 300: return "Cloudy";
-            case 400: return "Light Showers";
-            case 500: return "Heavy Showers";
-            case 600: return "Rain";
-            case 700: return "Snow";
-            case 800: return "Thunder";
-            default:  return "Invalid weather condition code provided: " + weatherCode;
-        }
+    public static String returnWeatherCondition(int code) {
+        return WEATHER_CONDITIONS.get(code);
     }
+
+//    public static String convertWeatherCodeToWeatherCondition(int weatherCode) {
+//        switch (weatherCode) {
+//            case 100: return "Clear";
+//            case 200: return "Partial Clouds";
+//            case 300: return "Cloudy";
+//            case 400: return "Light Showers";
+//            case 500: return "Heavy Showers";
+//            case 600: return "Rain";
+//            case 700: return "Snow";
+//            case 800: return "Thunder";
+//            default:  return "Invalid weather condition code provided: " + weatherCode;
+//        }
+//    }
 
     public static float convertCelsiusToFahrenheit(float celsius) {
         return (float) (celsius * 1.8 + 32);
@@ -131,5 +122,31 @@ public class DetailedReading extends Reading {
 
     public static float calculateWindChill(float t, float v) {
         return (float) (13.12 + 0.6215 * t - 11.37 * Math.pow(v, 0.16) + 0.3965 * t * Math.pow(v, 0.16));
+    }
+
+    private static TreeMap<Integer, String> populateWeatherIcons() {
+        TreeMap<Integer, String> weatherIcons = new TreeMap<>();
+        weatherIcons.put(100, "sun");
+        weatherIcons.put(200, "cloud sun");
+        weatherIcons.put(300, "cloud");
+        weatherIcons.put(400, "cloud rain");
+        weatherIcons.put(500, "cloud showers heavy");
+        weatherIcons.put(600, "umbrella");
+        weatherIcons.put(700, "snowflake");
+        weatherIcons.put(800, "bolt");
+        return weatherIcons;
+    }
+
+    private static TreeMap<Integer, String> populateWeatherConditions() {
+        TreeMap<Integer, String> weatherConditions = new TreeMap<>();
+        weatherConditions.put(100, "Clear");
+        weatherConditions.put(200, "Partial Clouds");
+        weatherConditions.put(300, "Cloudy");
+        weatherConditions.put(400, "Light Showers");
+        weatherConditions.put(500, "Heavy Showers");
+        weatherConditions.put(600, "Rain");
+        weatherConditions.put(700, "Snow");
+        weatherConditions.put(800, "Thunder");
+        return weatherConditions;
     }
 }
