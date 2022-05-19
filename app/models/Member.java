@@ -3,6 +3,7 @@ package models;
 import play.db.jpa.Model;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import java.util.List;
 public class Member extends Model {
     public String firstName;
     public String lastName;
+    @Column(unique=true)
     public String email;
     private String password;
 

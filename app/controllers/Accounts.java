@@ -4,6 +4,8 @@ import models.Member;
 import play.Logger;
 import play.mvc.Controller;
 
+import javax.persistence.PersistenceException;
+
 public class Accounts extends Controller {
     public static void signup() {
         render("signup.html");
@@ -30,11 +32,17 @@ public class Accounts extends Controller {
     }
 
     public static void register(String firstName, String lastName, String email, String password) {
-        Logger.info("Registering new member: " + email);
         Member member = new Member(firstName, lastName, email, password);
-        member.save();
-        session.put("logged_in_member_id", member.id);
-        redirect("/dashboard");
+        try {
+            // Throws PersistenceException if email already exists in database
+            member.save();
+            Logger.info("New member registered: " + email);
+            session.put("logged_in_member_id", member.id);
+            redirect("/dashboard");
+        } catch (PersistenceException e) {
+            Logger.error("User attempting to register with an email that already exists in database: " + e);
+            redirect("/login");
+        }
     }
 
     public static void authenticate(String email, String password) {
@@ -86,10 +94,15 @@ public class Accounts extends Controller {
         if (member == null) {
             login();
         } else {
-            Logger.info("Updating logged in member's email");
-            member.email = email;
-            member.save();
-            settings("Email updated", "success");
+            try {
+                member.email = email;
+                member.save();
+                Logger.info("Updated logged in member's email");
+                settings("Email updated", "success");
+            } catch (PersistenceException e) {
+                Logger.error("Could not update: Email already exists in database: " + e);
+                settings("The email entered is already registered with an account", "error");
+            }
         }
     }
 
