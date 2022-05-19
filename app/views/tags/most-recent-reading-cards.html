@@ -37,17 +37,17 @@
       </div>
       <div class="header">&nbsp;</div>
       <div class="meta">
-        ${_station.latestReading?.temperature.round(1)} °C
+        ${_station.latestReading?.temperature?.round(1)} °C
       </div>
       <i class="right floated big blue ${_station.stationAnalytics?.temperatureTrendIcon} icon"></i>
       <div class="meta">
-        ${_station.latestReading?.tempInFahrenheit.round(1)} °F
+        ${_station.latestReading?.tempInFahrenheit?.round(1)} °F
       </div>
       <div class="meta">
-        Max: ${_station.stationAnalytics?.maxTemperature.round(1)} °C
+        Max: ${_station.stationAnalytics?.maxTemperature?.round(1)} °C
       </div>
       <div class="meta">
-        Min: ${_station.stationAnalytics?.minTemperature.round(1)} °C
+        Min: ${_station.stationAnalytics?.minTemperature?.round(1)} °C
       </div>
     </div>
   </div>
@@ -67,13 +67,13 @@
         Direction: ${_station.latestReading?.cardinalWindDirection}
       </div>
       <div class="meta">
-        Feels Like ${_station.latestReading?.windChill.round(1)} °C
+        Feels Like ${_station.latestReading?.windChill?.round(1)} °C
       </div>
       <div class="meta">
-        Max: ${_station.stationAnalytics?.maxWindSpeed.round(1)} km/h
+        Max: ${_station.stationAnalytics?.maxWindSpeed?.round(1)} km/h
       </div>
       <div class="meta">
-        Min: ${_station.stationAnalytics?.minWindSpeed.round(1)} km/h
+        Min: ${_station.stationAnalytics?.minWindSpeed?.round(1)} km/h
       </div>
     </div>
   </div>
@@ -86,14 +86,14 @@
       </div>
       <div class="header">&nbsp;</div>
       <div class="meta">
-        ${_station.latestReading?.pressure.round(1)} hPa
+        ${_station.latestReading?.pressure?.round(1)} hPa
       </div>
       <i class="right floated big orange ${_station.stationAnalytics?.pressureTrendIcon} icon"></i>
       <div class="meta">
-        Max: ${_station.stationAnalytics?.maxPressure.round(1)} hPa
+        Max: ${_station.stationAnalytics?.maxPressure?.round(1)} hPa
       </div>
       <div class="meta">
-        Min: ${_station.stationAnalytics?.minPressure.round(1)} hPa
+        Min: ${_station.stationAnalytics?.minPressure?.round(1)} hPa
       </div>
     </div>
   </div>
