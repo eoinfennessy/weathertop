@@ -22,15 +22,17 @@
   <div class="three fields">
     <div class="field">
       <label>Name</label>
-      <input placeholder="Name" type="text" name="name">
+      <input placeholder="Name" type="text" name="name" required>
     </div>
     <div class="field">
       <label>Latitude</label>
-      <input placeholder="Latitude in Decimal Degrees" type="number" step="0.001" min="-90" max="90" name="latitude">
+      <input placeholder="Latitude in Decimal Degrees" type="number"
+             step="0.001" min="-90" max="90" name="latitude" required>
     </div>
     <div class="field">
       <label>Longitude</label>
-      <input placeholder="Longitude in Decimal Degrees" type="number" step="0.001" min="-180" max="180" name="longitude">
+      <input placeholder="Longitude in Decimal Degrees" type="number"
+             step="0.001" min="-180" max="180" name="longitude" required>
     </div>
   </div>
   <button class="ui blue submit button">Add Station</button>
