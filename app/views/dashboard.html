@@ -5,7 +5,11 @@
 
 <section class="ui raised segment">
   #{list items:stations, as:'station'}
-    <section class="ui stacked segment">
+    <section class="ui segment">
+      <div class="ui header" id="station-list">
+        <h1>${station.name}</h1>
+      </div>
+      <div class="ui divider"></div>
       #{most-recent-reading-cards station:station /}
       <div class="ui divider"></div>
       <a href="stations/${station.id}" class="ui icon button">

@@ -27,3 +27,11 @@
 #about-main p {
     font-size: 1.1em;
 }
+
+#station-header h1 {
+    font-size: 4em;
+}
+
+#station-list h1 {
+    font-size: 2em;
+}

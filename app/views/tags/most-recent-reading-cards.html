@@ -1,45 +1,34 @@
-<div class="ui five stackable inverted cards">
+<div class="ui four stackable inverted cards">
   <div class="card">
-    <div class="content">
-      <i class="right floated huge violet map marker alternate icon"></i>
-      <div class="header">&nbsp;</div>
-      <div class="header">
-        ${_station.name}
-      </div>
-      <div class="header">&nbsp;</div>
-      <div class="meta">
-        Lat: ${_station.latitude.round(3)}°
-      </div>
-      <div class="meta">
-        Lat: ${_station.longitude.round(3)}°
-      </div>
-    </div>
-  </div>
-  <div class="card">
-    <div class="content">
-      <i class="right floated huge red ${_station.latestReading?.weatherIcon} icon"></i>
+    <div class="middle aligned center aligned content">
+      <i class="huge red ${_station.latestReading?.weatherIcon} icon"></i>
       <div class="header">&nbsp;</div>
       <div class="header">
         Weather
       </div>
       <div class="header">&nbsp;</div>
       <div class="meta">
+        ${_station.latestReading?.date.toLocaleString()}
+      </div>
+      <div class="meta">
         ${_station.latestReading?.weatherCondition}
       </div>
     </div>
   </div>
   <div class="card">
-    <div class="content">
-      <i class="right floated huge blue temperature low icon"></i>
+    <div class="middle aligned center aligned content">
+      <div class="center aligned">
+        <i class="huge blue temperature low icon"></i>
+        <i class="big blue ${_station.stationAnalytics?.temperatureTrendIcon} icon"></i>
+      </div>
       <div class="header">&nbsp;</div>
-      <div class="header">
+      <div class="center aligned header">
         Temp
       </div>
       <div class="header">&nbsp;</div>
       <div class="meta">
         ${_station.latestReading?.temperature?.round(1)} °C
       </div>
-      <i class="right floated big blue ${_station.stationAnalytics?.temperatureTrendIcon} icon"></i>
       <div class="meta">
         ${_station.latestReading?.tempInFahrenheit?.round(1)} °F
       </div>
@@ -52,8 +41,11 @@
     </div>
   </div>
   <div class="card">
-    <div class="content">
-      <i class="right floated huge green wind icon"></i>
+    <div class="center aligned middle aligned content">
+      <div class="center aligned">
+        <i class="huge green wind icon"></i>
+        <i class="big green ${_station.stationAnalytics?.windSpeedTrendIcon} icon"></i>
+      </div>
       <div class="header">&nbsp;</div>
       <div class="header">
         Wind
@@ -62,7 +54,6 @@
       <div class="meta">
         Beaufort Force ${_station.latestReading?.beaufortForce}
       </div>
-      <i class="right floated big green ${_station.stationAnalytics?.windSpeedTrendIcon} icon"></i>
       <div class="meta">
         Direction: ${_station.latestReading?.cardinalWindDirection}
       </div>
@@ -78,8 +69,11 @@
     </div>
   </div>
   <div class="card">
-    <div class="content">
-      <i class="right floated huge orange compress arrows alternate icon"></i>
+    <div class="center aligned middle aligned content">
+      <div class="center aligned">
+        <i class="huge orange compress arrows alternate icon"></i>
+        <i class="big orange ${_station.stationAnalytics?.pressureTrendIcon} icon"></i>
+      </div>
       <div class="header">&nbsp;</div>
       <div class="header">
         Pressure
@@ -88,7 +82,6 @@
       <div class="meta">
         ${_station.latestReading?.pressure?.round(1)} hPa
       </div>
-      <i class="right floated big orange ${_station.stationAnalytics?.pressureTrendIcon} icon"></i>
       <div class="meta">
         Max: ${_station.stationAnalytics?.maxPressure?.round(1)} hPa
       </div>

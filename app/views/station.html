@@ -2,8 +2,9 @@
 #{set title:station.name + ' Weather Station' /}
 
 #{menu id:'dashboard', heading:station.name + ' Weather Station' /}
-<section class="ui raised segment">
-  #{most-recent-reading-cards station:station /}
-  #{readings-table station:station /}
-  #{add-reading station:station /}
-</section>
+
+#{station-heading station:station /}
+
+#{most-recent-reading-cards station:station /}
+#{readings-table station:station /}
+#{add-reading station:station /}
