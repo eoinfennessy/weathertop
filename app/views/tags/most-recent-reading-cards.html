@@ -8,7 +8,7 @@
       </div>
       <div class="header">&nbsp;</div>
       <div class="meta">
-        ${_station.latestReading?.date.toLocaleString()}
+        ${_station.latestReading?.date?.toLocaleString()}
       </div>
       <div class="meta">
         ${_station.latestReading?.weatherCondition}
@@ -19,7 +19,9 @@
     <div class="middle aligned center aligned content">
       <div class="center aligned">
         <i class="huge blue temperature low icon"></i>
-        <i class="big blue ${_station.stationAnalytics?.temperatureTrendIcon} icon"></i>
+        #{if _station.stationAnalytics?.temperatureTrendIcon}
+          <i class="big blue ${_station.stationAnalytics?.temperatureTrendIcon} icon"></i>
+        #{/if}
       </div>
       <div class="header">&nbsp;</div>
       <div class="center aligned header">
@@ -44,7 +46,9 @@
     <div class="center aligned middle aligned content">
       <div class="center aligned">
         <i class="huge green wind icon"></i>
-        <i class="big green ${_station.stationAnalytics?.windSpeedTrendIcon} icon"></i>
+        #{if _station.stationAnalytics?.windSpeedTrendIcon}
+          <i class="big green ${_station.stationAnalytics?.windSpeedTrendIcon} icon"></i>
+        #{/if}
       </div>
       <div class="header">&nbsp;</div>
       <div class="header">
@@ -72,7 +76,9 @@
     <div class="center aligned middle aligned content">
       <div class="center aligned">
         <i class="huge orange compress arrows alternate icon"></i>
-        <i class="big orange ${_station.stationAnalytics?.pressureTrendIcon} icon"></i>
+        #{if _station.stationAnalytics?.pressureTrendIcon}
+          <i class="big orange ${_station.stationAnalytics?.pressureTrendIcon} icon"></i>
+        #{/if}
       </div>
       <div class="header">&nbsp;</div>
       <div class="header">
