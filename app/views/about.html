@@ -1,7 +1,12 @@
 #{extends 'main.html' /}
 #{set title:'About' /}
 
-#{welcome-menu id:'about' /}
+#{if session.contains("logged_in_member_id")}
+  #{menu id:'about' /}
+#{/if}
+#{else}
+  #{welcome-menu id:'about' /}
+#{/else}
 
 <section class="ui center aligned middle aligned segment" id="about-main">
   <h1 class="ui header">About WeatherTop</h1>

@@ -1,7 +1,12 @@
 #{extends 'main.html' /}
 #{set title:'WeatherTop' /}
 
-#{welcome-menu id:"start"/}
+#{if session.contains("logged_in_member_id")}
+  #{menu id:'start' /}
+#{/if}
+#{else}
+  #{welcome-menu id:'start' /}
+#{/else}
 
 <div class="ui center aligned inverted segment" id="masthead">
   <h1 class="ui header">
