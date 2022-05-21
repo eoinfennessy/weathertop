@@ -9,9 +9,11 @@ public class DetailedReading extends Reading {
     public String cardinalWindDirection;
     public float windChill;
     public String weatherIcon;
+    public String beaufortLabel;
 
     private static final TreeMap<Integer, String> WEATHER_ICONS = populateWeatherIcons();
     private static final TreeMap<Integer, String> WEATHER_CONDITIONS = populateWeatherConditions();
+    private static final TreeMap<Integer, String> BEAUFORT_LABELS = populateBeaufortLabels();
 
     public DetailedReading(Reading reading) {
         super(reading);
@@ -21,6 +23,7 @@ public class DetailedReading extends Reading {
         cardinalWindDirection = convertDegreesToCardinalDirection(windDirection);
         windChill = calculateWindChill(temperature, windSpeed);
         weatherIcon = returnWeatherIcon(code);
+        beaufortLabel = returnBeaufortLabel(beaufortForce);
     }
 
     public static String returnWeatherIcon(int code) {
@@ -29,6 +32,10 @@ public class DetailedReading extends Reading {
 
     public static String returnWeatherCondition(int code) {
         return WEATHER_CONDITIONS.get(code);
+    }
+
+    public static String returnBeaufortLabel(int beaufortForce) {
+        return BEAUFORT_LABELS.get(beaufortForce);
     }
 
 //    public static String convertWeatherCodeToWeatherCondition(int weatherCode) {
@@ -148,5 +155,23 @@ public class DetailedReading extends Reading {
         weatherConditions.put(700, "Snow");
         weatherConditions.put(800, "Thunder");
         return weatherConditions;
+    }
+
+    private static TreeMap<Integer, String> populateBeaufortLabels() {
+        TreeMap<Integer, String> beaufortLabels = new TreeMap<>();
+        beaufortLabels.put(0, "Calm");
+        beaufortLabels.put(1, "Light Air");
+        beaufortLabels.put(2, "Light Breeze");
+        beaufortLabels.put(3, "Gentle Breeze");
+        beaufortLabels.put(4, "Moderate Breeze");
+        beaufortLabels.put(5, "Fresh Breeze");
+        beaufortLabels.put(6, "Strong Breeze");
+        beaufortLabels.put(7, "Near Gale");
+        beaufortLabels.put(8, "Gale");
+        beaufortLabels.put(9, "Severe Gale");
+        beaufortLabels.put(10, "Strong Storm");
+        beaufortLabels.put(11, "Violent Storm");
+        beaufortLabels.put(12, "Hurricane Force");
+        return beaufortLabels;
     }
 }
