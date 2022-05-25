@@ -1,6 +1,7 @@
 package controllers;
 
 import models.Member;
+import models.MemberAnalytics;
 import play.Logger;
 import play.mvc.Controller;
 
@@ -28,6 +29,16 @@ public class Accounts extends Controller {
             render("account-settings.html", message, messageType);
         } else {
             login();
+        }
+    }
+
+    public static void analytics() {
+        Member member = getLoggedInMember();
+        if (member == null) {
+            login();
+        } else {
+            MemberAnalytics memberAnalytics = new MemberAnalytics(member);
+            render("account-analytics.html", member, memberAnalytics);
         }
     }
 
@@ -113,7 +124,7 @@ public class Accounts extends Controller {
         } else if (member.isCorrectPassword(oldPassword)) {
             if (password.equals(confirmPassword)) {
                 Logger.info("Updating password");
-                member.setPassword(password);
+                member.password = password;
                 member.save();
                 settings("Password updated", "success");
             } else {

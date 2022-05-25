@@ -1,0 +1,26 @@
+#{extends 'main.html' /}
+#{set title:'Account Analytics' /}
+
+#{menu id:'analytics', heading:'Account Analytics' /}
+
+<div class="ui segment">
+  <span class="ui large text">Hello ${member.firstName},<br>Here's some data about your account...</span>
+  <div class="ui two statistics">
+    <div class="ui statistic">
+      <div class="value">
+        ${memberAnalytics.numberOfStations}
+      </div>
+      <div class="label">
+        Stations
+      </div>
+    </div>
+    <div class="ui statistic">
+      <div class="value">
+        ${memberAnalytics.numberOfReadings}
+      </div>
+      <div class="label">
+        Readings
+      </div>
+    </div>
+  </div>
+</div>

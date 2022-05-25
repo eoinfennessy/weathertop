@@ -7,6 +7,7 @@ GET     /                                                   Start.index
 GET     /signup                                             Accounts.signup
 GET     /login                                              Accounts.login
 GET     /account-settings                                   Accounts.settings
+GET     /account-analytics                                  Accounts.analytics
 POST    /register                                           Accounts.register
 POST    /authenticate                                       Accounts.authenticate
 POST    /account-settings/update-name                       Accounts.updateName
