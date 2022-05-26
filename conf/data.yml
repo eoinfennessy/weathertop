@@ -51,6 +51,7 @@ Member(m1):
   password: secret
   firstName: Homer
   lastName: Simpson
+  joinDate: 2021-01-18 09:30:00
   stations:
     - s1
     - s2

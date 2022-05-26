@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -16,6 +17,7 @@ public class Member extends Model {
     @Column(unique=true)
     public String email;
     public String password;
+    public Date joinDate;
 
     @OneToMany(cascade = CascadeType.ALL)
     public List<Station> stations = new ArrayList<>();
@@ -25,6 +27,7 @@ public class Member extends Model {
         this.lastName = lastName;
         this.email = email;
         this.password = password;
+        this.joinDate = new Date();
     }
 
     public static Member findByEmail(String email) {

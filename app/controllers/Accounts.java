@@ -6,6 +6,7 @@ import play.Logger;
 import play.mvc.Controller;
 
 import javax.persistence.PersistenceException;
+import java.text.SimpleDateFormat;
 
 public class Accounts extends Controller {
     public static void signup() {
@@ -38,7 +39,9 @@ public class Accounts extends Controller {
             login();
         } else {
             MemberAnalytics memberAnalytics = new MemberAnalytics(member);
-            render("account-analytics.html", member, memberAnalytics);
+            SimpleDateFormat sdf = new SimpleDateFormat("dd MMM, yyyy");
+            String joinDate = sdf.format(member.joinDate);
+            render("account-analytics.html", member, memberAnalytics, joinDate);
         }
     }
 

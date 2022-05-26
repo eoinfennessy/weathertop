@@ -35,3 +35,7 @@
 #station-list h1 {
     font-size: 2em;
 }
+
+#account-analytics div.statistic {
+    margin: 4em 0;
+}

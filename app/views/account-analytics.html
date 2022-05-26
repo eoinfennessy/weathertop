@@ -3,9 +3,20 @@
 
 #{menu id:'analytics', heading:'Account Analytics' /}
 
-<div class="ui segment">
-  <span class="ui large text">Hello ${member.firstName},<br>Here's some data about your account...</span>
-  <div class="ui two statistics">
+<div class="ui middle aligned stacked segment">
+  <i class="big circular inverted blue chart bar icon"></i>
+  <span class="ui big text">Hello ${member.firstName}, here's your account data...</span>
+</div>
+<div class="ui inverted segment" id="account-analytics">
+  <div class="ui three inverted statistics">
+    <div class="ui statistic">
+      <div class="value">
+        ${joinDate}
+      </div>
+      <div class="label">
+        Date Joined
+      </div>
+    </div>
     <div class="ui statistic">
       <div class="value">
         ${memberAnalytics.numberOfStations}
@@ -16,10 +27,30 @@
     </div>
     <div class="ui statistic">
       <div class="value">
+        <i class="blue book reader icon"></i>
         ${memberAnalytics.numberOfReadings}
       </div>
       <div class="label">
         Readings
+      </div>
+    </div>
+  </div>
+  <div class="ui two inverted statistics">
+    <div class="ui statistic">
+      <div class="value">
+        <i class="orange calendar day icon"></i>
+        ${memberAnalytics.daysActive.round()}
+      </div>
+      <div class="label">
+        Days Active
+      </div>
+    </div>
+    <div class="ui statistic">
+      <div class="value">
+        ${memberAnalytics.avgReadingsPerDay.round(2)}
+      </div>
+      <div class="label">
+        Avg Readings per Day
       </div>
     </div>
   </div>
