@@ -8,6 +8,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Entity
@@ -30,7 +31,7 @@ public class Station extends Model {
 
     public void updateLatestReading() {
         if (!readings.isEmpty()) {
-            Reading reading = readings.get(readings.size() - 1);
+            Reading reading = readings.stream().max(Comparator.comparing(r -> r.date)).get();
             latestReading = new DetailedReading(reading);
         } else {
             latestReading = null;
