@@ -2,10 +2,7 @@ package models;
 
 import play.db.jpa.Model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -17,6 +14,7 @@ public class Station extends Model {
     public float latitude;
     public float longitude;
     @OneToMany(cascade = CascadeType.ALL)
+    @OrderBy("date DESC")
     public List<Reading> readings = new ArrayList<>();
     @Transient
     public DetailedReading latestReading;

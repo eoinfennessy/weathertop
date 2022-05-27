@@ -87,16 +87,16 @@ public class StationAnalytics extends Model {
 
     private void updateTrendIcons(List<Reading> readings) {
         if (readings.size() >= 3) {
-            int len = readings.size();
-            temperatureTrendIcon = returnTrendIcon(readings.get(len - 3).temperature,
-                    readings.get(len - 2).temperature,
-                    readings.get(len - 1).temperature);
-            windSpeedTrendIcon = returnTrendIcon(readings.get(len - 3).windSpeed,
-                    readings.get(len - 2).windSpeed,
-                    readings.get(len - 1).windSpeed);
-            pressureTrendIcon = returnTrendIcon(readings.get(len - 3).pressure,
-                    readings.get(len - 2).pressure,
-                    readings.get(len - 1).pressure);
+            // Most recent reading is at index zero
+            temperatureTrendIcon = returnTrendIcon(readings.get(2).temperature,
+                    readings.get(1).temperature,
+                    readings.get(0).temperature);
+            windSpeedTrendIcon = returnTrendIcon(readings.get(2).windSpeed,
+                    readings.get(1).windSpeed,
+                    readings.get(0).windSpeed);
+            pressureTrendIcon = returnTrendIcon(readings.get(2).pressure,
+                    readings.get(1).pressure,
+                    readings.get(0).pressure);
         } else {
             temperatureTrendIcon = "";
             windSpeedTrendIcon = "";
