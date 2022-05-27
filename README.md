@@ -6,7 +6,7 @@ account/station analytics. Styled using [Fomantic-UI](https://fomantic-ui.com/) 
 [Heroku](https://www.heroku.com/) using an [ElephantSQL]() database.
 
 This web app was created as part of an assignment for SETU's Computer Science HDip course. You can [visit the 
-deployed app here](https://immense-harbor-44315.herokuapp.com/).
+deployed app here](https://weathertop-weather-stations.herokuapp.com/).
 
 ## Getting Started
 ### Prerequisites
