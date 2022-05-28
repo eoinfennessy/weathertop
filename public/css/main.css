@@ -1,45 +1,45 @@
 section.ui.container {
-    padding: 1.5em 0;
+  padding: 1.5em 0;
 }
 
 #masthead {
-    padding: 10em 5em;
+  padding: 10em 5em;
 }
 
 #masthead h1 {
-    font-size: 4em;
-    font-weight: lighter;
+  font-size: 4em;
+  font-weight: lighter;
 }
 
 #masthead a {
-    margin-top: 2em;
+  margin-top: 2em;
 }
 
 #start-main .grid-cell {
-    padding: 2em;
+  padding: 2em;
 }
 
 #start-main p {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 #about-main h1 {
-    font-size: 3em;
-    margin: 1.5em;
+  font-size: 3em;
+  margin: 1.5em;
 }
 
 #about-main p {
-    font-size: 1.1em;
+  font-size: 1.1em;
 }
 
 #station-header h1 {
-    font-size: 4em;
+  font-size: 4em;
 }
 
 #station-list h1 {
-    font-size: 2em;
+  font-size: 2em;
 }
 
 #account-analytics div.statistic {
-    margin: 4em 0;
+  margin: 4em 0;
 }
