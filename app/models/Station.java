@@ -29,8 +29,8 @@ public class Station extends Model {
 
   public void updateLatestReading() {
     if (!readings.isEmpty()) {
-      Reading reading = readings.stream().max(Comparator.comparing(r -> r.date)).get();
-      latestReading = new DetailedReading(reading);
+//      Reading reading = readings.stream().max(Comparator.comparing(r -> r.date)).get();
+      latestReading = new DetailedReading(readings.get(0));
     } else {
       latestReading = null;
     }

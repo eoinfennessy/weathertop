@@ -17,7 +17,7 @@ public class Dashboard extends Controller {
       station.updateLatestReading();
       station.updateStationAnalytics();
     }
-    render ("dashboard.html", stations);
+    render("dashboard.html", stations);
   }
 
   public static void addStation(String name, float latitude, float longitude) {
