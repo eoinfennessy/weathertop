@@ -5,8 +5,7 @@ Users can register, log in, add/delete stations and readings, update account set
 account/station analytics. Styled using [Fomantic-UI](https://fomantic-ui.com/) and deployed on 
 [Heroku](https://www.heroku.com/) using an [ElephantSQL]() database.
 
-This web app was created as part of an assignment for SETU's Computer Science HDip course. You can [visit the 
-deployed app here](https://weathertop-weather-stations.herokuapp.com/).
+This web app was created as part of an assignment for SETU's Computer Science HDip course. I also created [a version of this app using Node.js and Express](https://github.com/eoinfennessy/weathertop-node) which includes extra functionality such as integration with the OpenWeatherMap API and a more extensive analytics section that uses Frappe Charts and a Leaflet map. You can [visit the deployed app here](https://the-return-of-weathertop.glitch.me/).
 
 ## Getting Started
 ### Prerequisites
